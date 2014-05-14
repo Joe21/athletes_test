@@ -9,3 +9,6 @@ class Athlete(models.Model):
 	last_name = models.CharField(max_length=50)
 	sport = models.CharField(max_length=50)
 	recommendation = models.CharField(max_length=1, choices=RECOMMENDATIONS)
+
+	def __unicode__(self):
+		return self.first_name
