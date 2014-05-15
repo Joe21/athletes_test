@@ -16,8 +16,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     ### My additions ###
-    url(r'^crud/', include('crud.urls')),
-
-
-    
+    url(r'^crud/', include('crud.urls', namespace="athletes")),
 )

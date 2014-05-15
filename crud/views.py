@@ -12,7 +12,18 @@ def index(request):
 	return HttpResponse(template.render(context))
 
 def detail(request, athlete_id):
-	return HttpResponse("Welcome to the detail page")
+	# Find the athlete from the db using the id passed with the request
+	athlete = Athlete.objects.get(pk=athlete_id)
+	template = loader.get_template('crud/detail.html')
+	context = RequestContext(request, {
+		'athlete' : athlete,
+		})
+	return HttpResponse(template.render(context))
 
 def add(request):
-	return HttpResponse("Welcome to the add page")
+	new_athlete = Athlete()
+	template = loader.get_template('crud/add.html')
+	context = RequestContext(request, {
+		'new_athlete' : new_athlete,
+		})
+	return HttpResponse(template.render(context))

@@ -1,7 +1,7 @@
 {% if all_athletes %}
 	<ul>
 		{% for athlete in all_athletes %}
-			<li><a href="/crud/{{ athlete.id }}/">{{athlete.first_name}} {{athlete.last_name}}</a></li>
+			<li><a href="{% url 'athletes:detail' athlete.id %}">{{athlete.first_name}} {{athlete.last_name}}</a></li>
 		{% endfor %}
 	</ul>
 {% else %}

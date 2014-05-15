@@ -10,5 +10,5 @@ urlpatterns = patterns('',
 	url(r'^(?P<athlete_id>\d+)/$', views.detail, name='detail'),
 
 	# ex: /crud/add/
-	# url(r'^(?P<athlete_id>/d+)/add/$'), views.add, name'add'),
+	url(r'^add/$', views.add, name='add'),
 )
