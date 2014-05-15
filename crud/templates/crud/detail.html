@@ -1,3 +1,6 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'crud/style.css' %}" />
+
 <h1>{{ athlete.first_name }}'s Info</h1>
 
 <strong>Name: </strong>{{ athlete.first_name }} {{ athlete.last_name }}<br />

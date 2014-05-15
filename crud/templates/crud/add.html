@@ -2,8 +2,11 @@
 <html>
 <head>
 	<title>Athlete Form</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'crud/style.css' %}" />
 </head>
 <body>
+
 	<h1>Add an Athlete</h1>
 
 	<form id="athlete_form" method="post" action="/crud/add/">
