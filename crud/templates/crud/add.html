@@ -1,1 +1,27 @@
-<h1>Athlete Form</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Athlete Form</title>
+</head>
+<body>
+	<h1>Add an Athlete</h1>
+
+	<form id="athlete_form" method="post" action="/crud/add/">
+		{% csrf_token %}
+		{% for hidden in form.hidden_fields %}
+			{{ hidden }}
+		{% endfor %}
+
+		{% for field in form.visible_fields %}
+			{{ field.errors }}
+			<div>
+			{{ field.help_text }}
+			{{ field }}
+			</div>
+		{% endfor %}	
+
+		<input type="submit" name="submit" value="Create Athlete" />
+	</form>
+
+</body>
+</html>
