@@ -1,0 +1,9 @@
+{% if all_athletes %}
+	<ul>
+		{% for athlete in all_athletes %}
+			<li><a href="/crud/{{athlete_id}}/">{{athlete.first_name}} {{athlete.last_name}}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No athletes are available</p>
+{% endif %}
