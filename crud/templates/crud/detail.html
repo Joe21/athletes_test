@@ -3,10 +3,4 @@
 <strong>Name: </strong>{{ athlete.first_name }} {{ athlete.last_name }}<br />
 <strong>Sport: </strong> {{ athlete.sport }}<br />
 
-<form action="{ urk 'athletes:detail' athlete.id %}" method="post">
-{% csrf_token %}
-{% for recomendation in athlete.choice_set.all %}
-	<input type="radio" name="Recommendation" id="recommendation{{ forloop.counter }}" value="{{ choice.id }}" />
-	<label for="recommendation{{ forloop.counter }}">{{ choice}}
-
-</form>
+<strong>Recommendation: </strong> {{ athlete.get_recommendation_display }}
