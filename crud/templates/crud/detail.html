@@ -1,9 +1,11 @@
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'crud/style.css' %}" />
+{% extends 'crud/base.html' %}
+{% block title %}{{ athlete.first_name }} {{ athlete.last_name }}{% endblock %}
 
-<h1>{{ athlete.first_name }}'s Info</h1>
+{% block body_block %}
+	<h1>{{ athlete.first_name }}'s Info</h1>
 
-<strong>Name: </strong>{{ athlete.first_name }} {{ athlete.last_name }}<br />
-<strong>Sport: </strong> {{ athlete.sport }}<br />
+	<strong>Name: </strong>{{ athlete.first_name }} {{ athlete.last_name }}<br />
+	<strong>Sport: </strong> {{ athlete.sport }}<br />
 
-<strong>Recommendation: </strong> {{ athlete.get_recommendation_display }}
+	<strong>Recommendation: </strong> {{ athlete.get_recommendation_display }}
+{% endblock %}

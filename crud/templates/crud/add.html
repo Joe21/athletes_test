@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Athlete Form</title>
-	{% load staticfiles %}
-	<link rel="stylesheet" type="text/css" href="{% static 'crud/style.css' %}" />
-</head>
-<body>
+{% extends 'crud/base.html' %}
+{% block title %}Add Athlete{% endblock %}
 
+{% block body_block %}
 	<h1>Add an Athlete</h1>
 
 	<form id="athlete_form" method="post" action="/crud/add/">
@@ -25,6 +20,4 @@
 
 		<input type="submit" name="submit" value="Create Athlete" />
 	</form>
-
-</body>
-</html>
+{% endblock %}

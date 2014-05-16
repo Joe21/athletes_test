@@ -1,15 +1,16 @@
-{% load staticfiles %}
+{% extends 'crud/base.html' %}
+{% block title %}Athletes{% endblock %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'crud/style.css' %}" />
+{% block body_block %}
+	{% if all_athletes %}
+		<ul>
+			{% for athlete in all_athletes %}
+				<li><a href="{% url 'athletes:detail' athlete.id %}">{{athlete.first_name}} {{athlete.last_name}}</a></li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No athletes are available</p>
+	{% endif %}
 
-{% if all_athletes %}
-	<ul>
-		{% for athlete in all_athletes %}
-			<li><a href="{% url 'athletes:detail' athlete.id %}">{{athlete.first_name}} {{athlete.last_name}}</a></li>
-		{% endfor %}
-	</ul>
-{% else %}
-	<p>No athletes are available</p>
-{% endif %}
-
-<a href="{% url 'athletes:add' %}">Add Athlete</a>
+	<a href="{% url 'athletes:add' %}">Add Athlete</a>
+{% endblock %}	
