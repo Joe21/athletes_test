@@ -13,8 +13,25 @@
   </head>
 
   <body>
+    <header class="top" role="header">
+      <div class="container">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
+        <nav class="navbar-collapse collapse" role="navigation">
+            <ul class="navbar-nav nav">
+                <li><a href="{% url 'athletes:index' %}">Home</a></li>
+                <li><a href="{% url 'athletes:add' %}">Add Athlete</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
     <div class="container-fluid">
       {% block body_block %}{% endblock %}
+    </div>
+    <hr />
+    <button id='crazy-button'>Crazy</button>
+    <div id='music-container'>
     </div>
     <script src="{% static 'crud/script.js' %}"></script>
   </body>
